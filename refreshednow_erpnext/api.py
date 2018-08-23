@@ -174,7 +174,7 @@ def get_rn_daily_events(start, end, filters=None):
 		["docstatus", "!=", 2]], fields=['*'])
 
 	for service in scheduled_services:
-		print "Service: ", service.name
+		print ("Service: ", service.name)
 
 		service_color = "grey"
 		if service.get("workflow_state") == "To Schedule":
@@ -439,7 +439,7 @@ def contact_query(doctype, txt, searchfield, start, page_len, filters):
 
 		})
 	for x in xrange(1,10):
-		print out
+		print (out)
 	return out
 
 
@@ -473,7 +473,7 @@ def get_address(doctype, txt, searchfield, start, page_len, filters):
 
 		})
 	for x in xrange(1,10):
-		print out
+		print (out)
 	return out
 
 
@@ -549,7 +549,7 @@ def rn_get_pdf(html, options=None):
 		with open(fname, "rb") as fileobj:
 			filedata = fileobj.read()
 
-	except IOError, e:
+	except IOError as e:
 		if ("ContentNotFoundError" in e.message
 			or "ContentOperationNotPermittedError" in e.message
 			or "UnknownContentError" in e.message
